@@ -20,5 +20,4 @@ class HBNBCommand(cmd.Cmd):
         pass
 
 if __name__ == '__main__':
-    prompt = HBNBCommand()
-    prompt.cmdloop()
+    HBNBCommand().cmdloop()
