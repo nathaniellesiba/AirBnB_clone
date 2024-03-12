@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
+"""the module defines a base class for all models"""
 import uuid
 from datetime import datetime
+
 
 class BaseModel:
     """Defines common attributes and methods for other classes"""
@@ -14,14 +15,15 @@ class BaseModel:
 
     def __str__(self):
         """Return a string representation of the instance"""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(cls,self.id, self.__dict__)
 
     def save(self):
-        """Update the public instance attribute updated_at with the current datetime"""
+        """Update public instance attr updated_at with current datetime"""
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        """Return a dictionary containing all keys/values of __dict__ of the instance"""
+        """Return dictionary containing all keys/values
+        of __dict__ of the instance"""
         obj_dict = self.__dict__.copy()
         obj_dict['__class__'] = self.__class__.__name__
         obj_dict['created_at'] = self.created_at.isoformat()
