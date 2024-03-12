@@ -27,6 +27,7 @@ class HBNBCommand(cmd.Cmd):
 
 """---------CRUD--------------"""
 
+
 def do_create(self, line):
     """Creates a new instance of
     BaseModel, saves it (to the
@@ -34,7 +35,7 @@ def do_create(self, line):
     """
     args = line.split()
     if len(args) == 2:
-        digit, name = args 
+        digit, name = args
         self.user[digit] = name
         print(f"** class name missing **")
         else:
