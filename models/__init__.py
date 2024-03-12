@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
-from filestorage import FileStorage
+"""module to satisfy object of class storage"""
+from models.engine.file_storage import FileStorage
 """Import the FileStorage class
 from the filestorage module"""
 
 storage = FileStorage()
+storage.reload()
